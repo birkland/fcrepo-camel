@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.fcrepo.camel.integration;
 
 import static java.lang.Integer.parseInt;
@@ -22,13 +23,17 @@ import static java.lang.System.getProperty;
 
 /**
  * Utility functions for integration testing
+ *
  * @author Aaron Coburn
  * @since November 7, 2014
  */
 public final class FcrepoTestUtils {
+    
+    /** Authorization username/pass query string for camel http and fcrep endpoints. */
+    public static final String AUTH_QUERY_PARAMS = "?authUsername=fedoraAdmin&authPassword=fedoraAdmin";
 
     private static final int FCREPO_PORT = parseInt(getProperty(
-                "fcrepo.dynamic.test.port", "8080"));
+            "fcrepo.dynamic.test.port", "8080"));
 
     /**
      * This is a utility class; the constructor is off-limits
@@ -55,9 +60,9 @@ public final class FcrepoTestUtils {
      */
     public static String getFcrepoEndpointUri() {
         if (FCREPO_PORT == 80) {
-            return "fcrepo://localhost/fcrepo/rest";
+            return "fcrepo://localhost/fcrepo/rest" + AUTH_QUERY_PARAMS;
         }
-        return "fcrepo://localhost:" + FCREPO_PORT + "/fcrepo/rest";
+        return "fcrepo://localhost:" + FCREPO_PORT + "/fcrepo/rest" + AUTH_QUERY_PARAMS;
     }
 
     /**
@@ -67,9 +72,9 @@ public final class FcrepoTestUtils {
      */
     public static String getFcrepoEndpointUriWithScheme() {
         if (FCREPO_PORT == 80) {
-            return "fcrepo:http://localhost/fcrepo/rest";
+            return "fcrepo:http://localhost/fcrepo/rest" + AUTH_QUERY_PARAMS;
         }
-        return "fcrepo:http://localhost:" + FCREPO_PORT + "/fcrepo/rest";
+        return "fcrepo:http://localhost:" + FCREPO_PORT + "/fcrepo/rest" + AUTH_QUERY_PARAMS;
     }
 
     /**
