@@ -20,8 +20,6 @@ package org.fcrepo.camel.integration;
 import static org.fcrepo.camel.integration.FcrepoTestUtils.getFcrepoBaseUrl;
 import static org.fcrepo.camel.integration.FcrepoTestUtils.getTextDocument;
 import static org.fcrepo.camel.integration.FcrepoTestUtils.getTurtleDocument;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
 import java.util.Map;

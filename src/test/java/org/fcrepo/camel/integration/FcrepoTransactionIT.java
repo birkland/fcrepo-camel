@@ -17,8 +17,6 @@
  */
 package org.fcrepo.camel.integration;
 
-import static org.junit.Assert.assertNotNull;
-
 import java.util.HashMap;
 import java.util.Map;
 
