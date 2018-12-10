@@ -28,7 +28,7 @@ import static java.lang.System.getProperty;
  * @since November 7, 2014
  */
 public final class FcrepoTestUtils {
-    
+
     /** Authorization username/pass query string for camel http and fcrep endpoints. */
     public static final String AUTH_QUERY_PARAMS = "?authUsername=fedoraAdmin&authPassword=fedoraAdmin";
 
